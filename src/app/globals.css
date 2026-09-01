@@ -1,0 +1,234 @@
+@import "tailwindcss";
+
+/* ============================================================
+   RazorRisk.AI Design System — CSS Custom Properties
+   ============================================================ */
+
+:root {
+  /* Surfaces */
+  --rr-bg: #F7F9FC;
+  --rr-surface: #FFFFFF;
+  --rr-surface-elevated: #FFFFFF;
+  --rr-surface-subtle: #F8FAFC;
+
+  /* Primary */
+  --rr-primary: #2563EB;
+  --rr-primary-hover: #1D4ED8;
+  --rr-primary-active: #1E40AF;
+  --rr-primary-soft: #EFF6FF;
+
+  /* Brand */
+  --rr-navy: #0F172A;
+
+  /* Text */
+  --rr-text: #0F172A;
+  --rr-text-secondary: #475569;
+  --rr-text-muted: #64748B;
+  --rr-text-disabled: #94A3B8;
+
+  /* Borders */
+  --rr-border: #E2E8F0;
+  --rr-border-strong: #CBD5E1;
+
+  /* Semantic */
+  --rr-success: #16A34A;
+  --rr-success-soft: #F0FDF4;
+  --rr-warning: #D97706;
+  --rr-warning-soft: #FFFBEB;
+  --rr-risk: #DC2626;
+  --rr-risk-soft: #FEF2F2;
+  --rr-info: #2563EB;
+  --rr-info-soft: #EFF6FF;
+
+  /* Shadows */
+  --rr-shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --rr-shadow: 0 1px 3px rgba(15, 23, 42, 0.06), 0 1px 2px rgba(15, 23, 42, 0.04);
+  --rr-shadow-md: 0 4px 12px rgba(15, 23, 42, 0.06);
+  --rr-shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.10);
+
+  /* Radii */
+  --rr-radius-sm: 6px;
+  --rr-radius: 8px;
+  --rr-radius-md: 10px;
+  --rr-radius-lg: 12px;
+  --rr-radius-xl: 16px;
+
+  /* Motion */
+  --rr-duration-fast: 160ms;
+  --rr-duration-base: 220ms;
+  --rr-duration-slow: 360ms;
+  --rr-duration-emphasis: 600ms;
+  --rr-ease: cubic-bezier(0.4, 0, 0.2, 1);
+  --rr-ease-in: cubic-bezier(0.4, 0, 1, 1);
+  --rr-ease-out: cubic-bezier(0, 0, 0.2, 1);
+  --rr-ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* Legacy compatibility tokens */
+  --background: var(--rr-bg);
+  --foreground: var(--rr-text);
+  --card: var(--rr-surface);
+  --card-foreground: var(--rr-text);
+  --popover: var(--rr-surface);
+  --popover-foreground: var(--rr-text);
+  --primary: var(--rr-primary);
+  --primary-foreground: #ffffff;
+  --secondary: var(--rr-surface-subtle);
+  --secondary-foreground: var(--rr-text);
+  --muted: var(--rr-surface-subtle);
+  --muted-foreground: var(--rr-text-muted);
+  --accent: var(--rr-primary-soft);
+  --accent-foreground: var(--rr-primary);
+  --destructive: var(--rr-risk);
+  --destructive-foreground: #ffffff;
+  --border: var(--rr-border);
+  --input: var(--rr-border);
+  --ring: var(--rr-primary);
+  --radius: var(--rr-radius);
+}
+
+/* Dark mode overrides */
+.dark {
+  --rr-bg: #0B0F19;
+  --rr-surface: #111827;
+  --rr-surface-elevated: #1E293B;
+  --rr-surface-subtle: #0F172A;
+  --rr-primary-soft: rgba(37, 99, 235, 0.12);
+  --rr-text: #F1F5F9;
+  --rr-text-secondary: #94A3B8;
+  --rr-text-muted: #64748B;
+  --rr-text-disabled: #475569;
+  --rr-border: #1E293B;
+  --rr-border-strong: #334155;
+  --rr-success-soft: rgba(22, 163, 74, 0.12);
+  --rr-warning-soft: rgba(217, 119, 6, 0.12);
+  --rr-risk-soft: rgba(220, 38, 38, 0.12);
+  --rr-info-soft: rgba(37, 99, 235, 0.12);
+  --rr-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --rr-shadow: 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
+  --rr-shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --rr-shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* ============================================================
+   Base Styles
+   ============================================================ */
+
+body {
+  background-color: var(--rr-bg);
+  color: var(--rr-text);
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tabular numerals for financial data */
+.font-tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ============================================================
+   Page Transition
+   ============================================================ */
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-enter {
+  animation: pageEnter var(--rr-duration-base) var(--rr-ease-out);
+}
+
+/* ============================================================
+   Skeleton Shimmer
+   ============================================================ */
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--rr-surface-subtle) 25%,
+    var(--rr-border) 50%,
+    var(--rr-surface-subtle) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+/* ============================================================
+   Count-up animation helper
+   ============================================================ */
+
+@keyframes countPulse {
+  0% { opacity: 0.6; transform: scale(0.97); }
+  50% { opacity: 1; transform: scale(1.02); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.count-animate {
+  animation: countPulse var(--rr-duration-emphasis) var(--rr-ease-out);
+}
+
+/* ============================================================
+   Scrollbar (Light)
+   ============================================================ */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--rr-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--rr-border-strong);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--rr-text-disabled);
+}
+
+/* ============================================================
+   Reduced Motion
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .skeleton-shimmer {
+    animation: none;
+    background: var(--rr-surface-subtle);
+  }
+
+  .page-enter {
+    animation: none;
+  }
+}
+
+/* ============================================================
+   Focus Ring
+   ============================================================ */
+
+:focus-visible {
+  outline: 2px solid var(--rr-primary);
+  outline-offset: 2px;
+}
