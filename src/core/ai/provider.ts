@@ -211,7 +211,7 @@ export class FinOpsAIProvider implements AIProvider {
       return this.synthesizeRecoveryDecision(userPrompt);
     }
 
-    return options.fallbackDecision;
+    return { rawResponse: userPrompt, unparsed: true, error: 'Unrecognized response format' };
   }
 
   private synthesizeFinanceDecision(prompt: string): any {
