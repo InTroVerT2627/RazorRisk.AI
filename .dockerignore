@@ -1,0 +1,14 @@
+node_modules
+.next
+.git
+.gitignore
+.env*.local
+coverage
+.system_generated
+npm-debug.log
+yarn-error.log
+README.md
+docs
+architecture
+assets
+tests
