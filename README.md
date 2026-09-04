@@ -279,6 +279,31 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
+## Deployment Guide (Vercel Production)
+
+RazorRisk.AI is fully optimized for **Vercel** serverless deployment with automatic zero-configuration detection:
+
+### 1. Import Project to Vercel
+1. Go to [Vercel Dashboard](https://vercel.com/new) and import `https://github.com/InTroVerT2627/RazorRisk.AI`.
+2. **Framework Preset**: `Next.js` (automatically detected).
+3. **Root Directory**: `./` (leave default).
+4. **Build Command**: `next build` (or leave default).
+5. **Install Command**: `npm install`.
+
+### 2. Configure Environment Variables (Optional)
+In **Project Settings → Environment Variables**, add:
+* `GEMINI_API_KEY`: *(Optional)* Your Google AI Gemini API Key for live LLM inference.
+* `RAZORPAY_KEY_ID`: *(Optional)* Razorpay Sandbox Key ID for live test payments.
+* `RAZORPAY_KEY_SECRET`: *(Optional)* Razorpay Sandbox Key Secret.
+* `RAZORPAY_WEBHOOK_SECRET`: *(Optional)* Razorpay Sandbox Webhook Secret.
+
+*(If no variables are configured, RazorRisk.AI runs with 100% feature completeness using its built-in deterministic simulation models and auto-seeded demo portfolio.)*
+
+### 3. Click Deploy
+Vercel will compile all 22 static and dynamic routes into serverless functions and edge assets.
+
+---
+
 ## Verification & Testing
 
 RazorRisk.AI includes a comprehensive test suite of **427 tests across 34 test files**:
