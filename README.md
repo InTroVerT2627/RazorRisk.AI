@@ -2,23 +2,28 @@
 
 <div align="center">
 
+[![Live Demo](https://img.shields.io/badge/Live_Demo-razor--risk--ai.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://razor-risk-ai.vercel.app)
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Next.js](https://img.shields.io/badge/Next.js-15.2.0-black?logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19.0.0-blue?logo=react)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7.3-blue?logo=typescript)](https://www.typescriptlang.org/)
 [![Tests](https://img.shields.io/badge/Tests-427%20Passed-success?logo=vitest)](tests/)
 [![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen)]()
-[![Node.js](https://img.shields.io/badge/Node.js-%3E%3D18.17.0-green?logo=node.js)](https://nodejs.org/)
+[![Deployment](https://img.shields.io/badge/Vercel-Production%20Ready-black?logo=vercel)](https://razor-risk-ai.vercel.app)
 
 **Autonomous FinOps, Multi-Signal Risk Radar & Revenue Recovery Operating Center**
 
 *Bridge the gap between raw payment telemetry, fraud risk scoring, multi-channel recovery, and cryptographic audit verification.*
 
-[Key Features](#key-features) • [System Architecture](#system-architecture) • [The 10 Operating Centers](#the-10-recovery-operating-centers) • [Installation](#installation-guide) • [API Reference](#api-documentation) • [Demo Walkthrough](#demo-walkthrough)
+🚀 **[Live Production Application](https://razor-risk-ai.vercel.app)** • [Key Features](#key-features) • [System Architecture](#system-architecture) • [The 10 Operating Centers](#the-10-recovery-operating-centers) • [Installation](#installation-guide) • [API Reference](#api-documentation) • [Demo Walkthrough](#demo-walkthrough)
 
 </div>
 
 ---
+
+> 🌐 **Live Vercel Production Deployment**: **[https://razor-risk-ai.vercel.app](https://razor-risk-ai.vercel.app)**
+
 
 ## Overview
 
